@@ -1,0 +1,26 @@
+{
+  "name": "mongoarticlescrapper",
+  "version": "1.0.0",
+  "description": "This lets users view and leave comments on the latest news",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gouri10/MongoArticleScrapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gouri10/MongoArticleScrapper/issues"
+  },
+  "homepage": "https://github.com/gouri10/MongoArticleScrapper#readme",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.8.7"
+  }
+}
