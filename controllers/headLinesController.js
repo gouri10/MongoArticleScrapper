@@ -7,7 +7,9 @@ var Headline = require("../models/Headline");
 
 module.exports = {
     fetch: function (cb) {
+        console.log("came here 7");
         scrape(function (data) {
+            console.log("came here 3");
             var articles = data;
             for (var i = 0; i < articles.length; i++) {
                 articles[i].date = makeDate();
@@ -22,7 +24,8 @@ module.exports = {
         Headline.remove(query, cb);
     },
     get: function (query, cb) {
-        Headline.finf(query)
+        console.log("came here 2");
+        Headline.find(query)
             .sort({
                 _id: -1
             })

@@ -1,15 +1,16 @@
 //Require request and cheerios , making our scrapes possible
-var request = require("request");
+var axios = require("axios");
 var cheerio = require("cheerio");
 
 var scrape = function (cb) {
-	request("http://www.nytimes.com", function(err, res, body){
+	console.log("came here 5");
+	axios.get("http://www.nytimes.com/").then(function(response){
 	
-	var $ = cheerio.load(body);
+	var $ = cheerio.load(response.data);
 	var articles = [];
 
 	$(".theme-summary").each(function(i,element){
-		var head = $(this).children(".stopy-heading").text().trim();
+		var head = $(this).children(".story-heading").text().trim();
 		var sum= $(this).children(".summary").text().trim();
 
 		if(head && sum){
@@ -24,8 +25,10 @@ var scrape = function (cb) {
 			}
 		});
 		cb(articles);
-	});
-};
+	})
+	
+
+}
 	
 	module.exports = scrape;
 
